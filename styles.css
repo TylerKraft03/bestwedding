@@ -1,0 +1,472 @@
+:root {
+  /* Color Palette */
+  --bg-light: #FAFAF8;
+  --pink-soft: #FAF0F4;
+  --pink-accent: #E09BB2;
+  --pink-dark: #C26383;
+  --green-soft: #F0F4F1;
+  --green-primary: #657D67;
+  --green-dark: #425444;
+  --text-main: #2C332D;
+  --text-muted: #737D75;
+  --white: #FFFFFF;
+  --border-light: rgba(101, 125, 103, 0.12);
+  --shadow-soft: 0 12px 36px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.08);
+  --radius-lg: 20px;
+  --radius-md: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.6;
+  padding-top: 85px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Sticky Navbar --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(250, 250, 248, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-light);
+  z-index: 1000;
+  padding: 16px 24px;
+}
+
+.nav-container {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--green-primary);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.2s ease;
+  padding-bottom: 2px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--green-primary);
+  border-bottom: 1.5px solid var(--green-primary);
+}
+
+/* --- Container --- */
+.container {
+  max-width: 720px;
+  width: 100%;
+  padding: 0 20px 40px;
+}
+
+/* --- Hero Card --- */
+.hero {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-light);
+  margin-bottom: 32px;
+}
+
+.hero-image-wrapper {
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-content {
+  padding: 48px 32px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--white) 0%, var(--pink-soft) 100%);
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--green-primary);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.names {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--text-main);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.ampersand {
+  display: block;
+  font-style: italic;
+  font-size: 2.2rem;
+  color: var(--pink-accent);
+  margin: 4px 0;
+}
+
+/* --- Parents Lineage Block --- */
+.parents-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 28px 0;
+  padding: 20px 10px;
+  border-top: 1px solid rgba(101, 125, 103, 0.15);
+  border-bottom: 1px solid rgba(101, 125, 103, 0.15);
+}
+
+.parent-side {
+  flex: 1;
+}
+
+.groom-label,
+.bride-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--green-dark);
+}
+
+.parent-names {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.parent-divider {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--pink-accent);
+}
+
+.date-badge {
+  margin-top: 24px;
+}
+
+.date-badge .date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--green-primary);
+}
+
+.date-badge .location {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+/* --- Content Cards --- */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-light);
+  scroll-margin-top: 100px;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--green-primary);
+  margin-bottom: 6px;
+}
+
+.display-title {
+  font-size: 2.8rem;
+}
+
+.card-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* --- Form Placeholder --- */
+.form-placeholder {
+  background-color: var(--green-soft);
+  border: 2px dashed var(--green-primary);
+  border-radius: var(--radius-md);
+  padding: 36px 20px;
+  text-align: center;
+  color: var(--green-dark);
+}
+
+.placeholder-icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.form-placeholder h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+
+.form-placeholder p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* --- Registry Cards --- */
+.registry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.registry-card {
+  background-color: var(--bg-light);
+  border-radius: var(--radius-md);
+  padding: 28px 20px;
+  text-align: center;
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.registry-icon {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.registry-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.registry-card p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.venmo-tag {
+  display: inline-block;
+  background-color: var(--pink-soft);
+  color: var(--pink-dark);
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+/* --- Venmo QR styling: make responsive and fit card --- */
+.venmo-qr {
+  display: block;
+  width: clamp(140px, 32vw, 260px);
+  max-width: 100%;
+  height: auto;
+  margin: 0  auto 16px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: var(--green-primary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--green-dark);
+}
+
+.btn-secondary {
+  background-color: var(--pink-soft);
+  color: var(--pink-dark);
+  border: 1px solid var(--pink-accent);
+}
+
+.btn-secondary:hover {
+  background-color: var(--pink-accent);
+  color: var(--white);
+}
+
+/* --- Dedicated Gallery Page Layout --- */
+.gallery-header-card {
+  text-align: center;
+  padding: 32px 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.gallery-item {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-light);
+}
+
+.gallery-item.large {
+  grid-column: span 2;
+  aspect-ratio: 16 / 9;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 640px) {
+  .registry-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 20px 0 30px;
+  color: var(--text-muted);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.back-link {
+  color: var(--green-primary);
+  text-decoration: none;
+  font-style: normal;
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 600px) {
+  body {
+    padding-top: 75px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.8px;
+  }
+
+  .hero-image-wrapper {
+    height: 280px;
+  }
+
+  .names {
+    font-size: 2.2rem;
+  }
+
+  .parents-block {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .parent-divider {
+    font-size: 1.1rem;
+    margin: -4px 0;
+  }
+
+  .registry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item.large {
+    grid-column: span 1;
+    aspect-ratio: 1 / 1;
+  }
+}
