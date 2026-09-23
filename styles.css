@@ -109,13 +109,13 @@ body {
 
 .hero-image-wrapper {
   width: 100%;
-  height: 420px;
+  height: 520px;
   overflow: hidden;
 }
 
 .hero-image {
   width: 100%;
-  height: 100%;
+  height: 110%;
   object-fit: cover;
   display: block;
 }
@@ -127,13 +127,18 @@ body {
 }
 
 .subtitle {
+  display: inline-block;
   font-size: 0.8rem;
   letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--green-primary);
   font-weight: 600;
-  display: block;
   margin-bottom: 8px;
+  background: var(--pink-soft);
+  border: 1px solid rgba(224, 155, 178, 0.35);
+  border-radius: 999px;
+  padding: 8px 16px;
+  line-height: 1.2;
 }
 
 .names {
@@ -243,14 +248,52 @@ body {
   margin: 0 auto;
 }
 
+.section-kicker {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 0.7rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--green-primary);
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.invitation-card {
+  background: linear-gradient(135deg, rgba(240, 244, 241, 0.9) 0%, rgba(250, 240, 244, 0.85) 100%);
+  padding: 28px 24px;
+}
+
+.invitation-card .card-header {
+  margin-bottom: 0;
+}
+
+.invitation-card .card-subtitle {
+  max-width: 560px;
+}
+
+.details-page .card {
+  padding: 32px 28px;
+}
+
+.details-page .card-header {
+  margin-bottom: 22px;
+}
+
+.details-page .registry-card {
+  background: linear-gradient(180deg, rgba(250, 250, 248, 0.95), rgba(240, 244, 241, 0.9));
+  border: 1px solid var(--border-light);
+}
+
 /* --- Form Placeholder --- */
 .form-placeholder {
-  background-color: var(--green-soft);
-  border: 2px dashed var(--green-primary);
+  background: linear-gradient(135deg, var(--green-soft) 0%, rgba(255, 255, 255, 0.7) 100%);
+  border: 1px solid rgba(101, 125, 103, 0.18);
   border-radius: var(--radius-md);
   padding: 36px 20px;
   text-align: center;
   color: var(--green-dark);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 .placeholder-icon {
@@ -400,9 +443,101 @@ body {
   transform: scale(1.03);
 }
 
+/* --- FAQ Page --- */
+.faq-header-card {
+  padding: 32px 20px 20px;
+  text-align: center;
+}
+
+.faq-card {
+  display: grid;
+  gap: 28px;
+}
+
+.schedule-card {
+  background: linear-gradient(135deg, var(--pink-soft) 0%, var(--green-soft) 100%);
+  border: 1px solid rgba(101, 125, 103, 0.18);
+  border-radius: var(--radius-md);
+  padding: 26px 22px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green-primary);
+  margin-bottom: 18px;
+}
+
+.schedule-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.schedule-list li {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(101, 125, 103, 0.12);
+}
+
+.schedule-list li:last-child {
+  border-bottom: none;
+}
+
+.schedule-time {
+  font-weight: 600;
+  color: var(--green-primary);
+  font-size: 0.82rem;
+  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 4px 10px;
+  text-align: center;
+  width: fit-content;
+}
+
+.faq-list {
+  display: grid;
+  gap: 16px;
+}
+
+.faq-item {
+  background: linear-gradient(135deg, rgba(240, 244, 241, 0.95) 0%, rgba(250, 250, 248, 0.95) 100%);
+  border: 1px solid rgba(101, 125, 103, 0.16);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.faq-question {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.faq-answer {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
 @media (max-width: 640px) {
   .registry-grid {
     grid-template-columns: 1fr;
+  }
+
+  .schedule-list li {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 }
 
@@ -434,6 +569,24 @@ footer {
     padding-top: 75px;
   }
 
+  .container {
+    padding: 0 14px 32px;
+  }
+
+  .card {
+    padding: 28px 20px;
+  }
+
+  .card-title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.68rem;
+    letter-spacing: 2.5px;
+    padding: 7px 12px;
+  }
+
   .nav-links {
     gap: 12px;
   }
@@ -459,6 +612,10 @@ footer {
   .parent-divider {
     font-size: 1.1rem;
     margin: -4px 0;
+  }
+
+  .btn {
+    width: 100%;
   }
 
   .registry-grid {
