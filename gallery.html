@@ -34,27 +34,109 @@
       <h1 class="card-title display-title">Moments Together</h1>
     </section>
 
-    <!-- Photo Gallery Grid -->
-    <section class="gallery-grid">
-      <div class="gallery-item large">
-        <img src="images/lights.jpg" alt="Tyler and Mallory photo" />
-      </div>
-      <div class="gallery-item">
-        <img src="images/168A3596.jpg" alt="Tyler and Mallory photo" />
-      </div>
-      <div class="gallery-item">
-        <img src="images/disney.jpg" alt="Tyler and Mallory photo" />
-      </div>
-      <div class="gallery-item">
-        <img src="images/168A3645.jpg" alt="Tyler and Mallory photo" />
-      </div>
-      <div class="gallery-item">
-        <img src="images/IMG_0552.jpg" alt="Tyler and Mallory photo" />
-      </div>
-      <div class="gallery-item large">
-        <img src="images/168A3814.JPG" alt="Tyler and Mallory photo" />
+    <div class="gallery-options" role="group" aria-label="Photo groups">
+      <button class="gallery-option active" type="button" aria-pressed="true" data-gallery-group="engagement">Engagement Photos</button>
+      <button class="gallery-option" type="button" aria-pressed="false" data-gallery-group="proposal">Proposal Photos</button>
+      <button class="gallery-option" type="button" aria-pressed="false" data-gallery-group="other">Other Photos</button>
+    </div>
+
+    <section class="gallery-group" id="engagement-photos" aria-label="Engagement Photos">
+      <div class="gallery-grid">
+        <div class="gallery-item large">
+          <img src="images/engagement/MTengagements-118 Copy.JPG" alt="Tyler and Mallory engagement photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/engagement/MTengagements-12.jpg" alt="Tyler and Mallory engagement photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/engagement/MTengagements-127.jpg" alt="Tyler and Mallory engagement photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/engagement/MTengagements-2.jpg" alt="Tyler and Mallory engagement photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/engagement/MTengagements-23.jpg" alt="Tyler and Mallory engagement photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/engagement/MTengagements-44.jpg" alt="Tyler and Mallory engagement photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/engagement/MTengagements-46.jpg" alt="Tyler and Mallory engagement photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/engagement/MTengagements-76.jpg" alt="Tyler and Mallory engagement photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/engagement/MTengagements-8.jpg" alt="Tyler and Mallory engagement photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/engagement/MTengagements-93.jpg" alt="Tyler and Mallory engagement photo" loading="lazy" decoding="async" />
+        </div>
       </div>
     </section>
+
+    <section class="gallery-group" id="proposal-photos" aria-label="Proposal Photos" hidden>
+      <div class="gallery-grid">
+        
+        <div class="gallery-item large">
+          <img src="images/168A3596.jpg" alt="Tyler and Mallory proposal photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/168A3645.jpg" alt="Tyler and Mallory proposal photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/168A3703.JPG" alt="Tyler and Mallory photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/168A3716.jpg" alt="Tyler and Mallory photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-item large">
+          <img src="images/168A3814.JPG" alt="Tyler and Mallory proposal photo" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-group" id="other-photos" aria-label="Other Photos" hidden>
+      <div class="gallery-grid">
+        <div class="gallery-item large">
+          <img src="images/lights.jpg" alt="Tyler and Mallory proposal photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/disney.jpg" alt="Tyler and Mallory proposal photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/IMG_0552.jpg" alt="Tyler and Mallory proposal photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/IMG_0872.jpg" alt="Tyler and Mallory photo" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const galleryOptions = document.querySelectorAll(".gallery-option");
+      const galleryGroups = {
+        engagement: document.querySelector("#engagement-photos"),
+        proposal: document.querySelector("#proposal-photos"),
+        other: document.querySelector("#other-photos")
+      };
+
+      galleryOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          const selectedGroup = option.dataset.galleryGroup;
+
+          galleryOptions.forEach((item) => {
+            const isSelected = item === option;
+            item.classList.toggle("active", isSelected);
+            item.setAttribute("aria-pressed", String(isSelected));
+          });
+
+          Object.entries(galleryGroups).forEach(([name, group]) => {
+            group.hidden = name !== selectedGroup;
+          });
+        });
+      });
+    </script>
 
     <footer>
       <p><a href="index.html" class="back-link">&larr; Back to Main Page</a></p>

@@ -441,6 +441,39 @@ body {
   padding: 32px 20px;
 }
 
+.gallery-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.gallery-option {
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  padding: 10px 16px;
+  background-color: var(--white);
+  color: var(--green-dark);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.gallery-option:hover,
+.gallery-option.active {
+  border-color: var(--green-primary);
+  background-color: var(--green-primary);
+  color: var(--white);
+}
+
+.gallery-option:focus-visible {
+  outline: 2px solid var(--pink-dark);
+  outline-offset: 3px;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -596,21 +629,25 @@ footer {
 /* --- Mobile Responsiveness --- */
 @media (max-width: 600px) {
   body {
-    padding-top: 75px;
+    padding-top: 88px;
   }
 
   .navbar {
-    padding: 12px 14px;
+    padding: 8px 12px 10px;
+    background-color: var(--green-dark);
+    border-bottom-color: var(--pink-accent);
   }
 
   .nav-brand {
-    font-size: 1.2rem;
-    line-height: 1;
+    color: var(--white);
+    font-size: 1.35rem;
+    line-height: 1.1;
     white-space: nowrap;
   }
 
   .nav-container {
-    gap: 8px;
+    flex-direction: column;
+    gap: 5px;
   }
 
   .container {
@@ -632,12 +669,22 @@ footer {
   }
 
   .nav-links {
-    gap: 12px;
+    width: 100%;
+    justify-content: center;
+    gap: clamp(8px, 3vw, 14px);
   }
 
   .nav-links a {
-    font-size: 0.7rem;
-    letter-spacing: 0.8px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 0.64rem;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--white);
+    border-bottom-color: var(--pink-accent);
   }
 
   .hero-image-wrapper {
@@ -674,11 +721,11 @@ footer {
 
 @media (max-width: 420px) {
   .navbar {
-    padding: 10px 10px;
+    padding: 8px 10px 10px;
   }
 
   .nav-brand {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 
   .nav-links {
@@ -686,7 +733,7 @@ footer {
   }
 
   .nav-links a {
-    font-size: 0.58rem;
-    letter-spacing: 0.6px;
+    font-size: 0.6rem;
+    letter-spacing: 0.4px;
   }
 }
