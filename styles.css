@@ -272,6 +272,10 @@ body {
   max-width: 560px;
 }
 
+.invitation-card .btn {
+  margin-top: 20px;
+}
+
 .details-page .card {
   padding: 32px 28px;
 }
@@ -310,6 +314,7 @@ body {
 .form-placeholder p {
   font-size: 0.82rem;
   color: var(--text-muted);
+  margin-bottom: 18px;
 }
 
 /* --- Registry Cards --- */
